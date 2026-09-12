@@ -8,7 +8,7 @@ function Login() {
 
   function validarLogin() {
     if (
-        email === "camila.gomes" && 
+        email === "camila.gomes@email.com" && 
         senha === "123456"
     ) {
         setMensagem("Acessado com sucesso!");
