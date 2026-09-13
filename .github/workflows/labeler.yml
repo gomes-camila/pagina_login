@@ -1,0 +1,7 @@
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: '.github/workflows/*'
+
+enhancement:
+  - changed-files:
+      - any-glob-to-any-file: 'projeto/**/*'
