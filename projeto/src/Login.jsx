@@ -7,37 +7,43 @@ function Login() {
   const [mensagem, setMensagem] = useState("");
 
   function validarLogin() {
-    if (
-        email === "camila.gomes@gmail.com" && 
-        senha === "123456789"
-    ) {
-        setMensagem("Acessado com sucesso!");
+    if (email === "camila.gomes@gmail.com" && senha === "123456789") {
+      setMensagem("Acessado com sucesso!");
     } else {
-        setMensagem("Usuário ou senha incorretos!");
-        }    
-    }   
+      setMensagem("Usuário ou senha incorretos!");
+    }    
+  }   
     
-    return (
-        <div>
-        <h2>Login</h2>
+  return (
+    <div>
+      <h2>Login</h2>
+      <div>
         <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            />
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+        />
+      </div>
 
-            <input
-            type="password"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            placeholder="Senha"
-            />
-
-            <button onClick={validarLogin}>Acessar</button>
-            <p>{mensagem}</p>
-        </div>
-
-    );
+      <div>
+        <input
+          type="password"
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
+          placeholder="Senha"
+        />
+      </div>
+      
+      <div>
+        <button onClick={validarLogin}>Acessar</button>
+      </div>
+      
+      <div>   
+        <p>{mensagem}</p>
+      </div>
+    </div>
+  );
 }
+
 export default Login;
