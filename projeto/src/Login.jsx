@@ -17,7 +17,8 @@ function Login() {
   return (
     <div>
       <h2>Login</h2>
-      <div>
+
+      <div style={{ marginBottom: "10px" }}>
         <input
           type="email"
           value={email}
@@ -26,7 +27,7 @@ function Login() {
         />
       </div>
 
-      <div>
+      <div style={{ marginBottom: "10px" }}>
         <input
           type="password"
           value={senha}
