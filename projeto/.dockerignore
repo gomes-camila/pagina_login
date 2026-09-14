@@ -1,0 +1,7 @@
+node_modules
+build
+.git
+.github
+sonar-project.properties
+.DS_Store
+npm-debug.log
