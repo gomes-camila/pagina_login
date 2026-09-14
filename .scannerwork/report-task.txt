@@ -1,0 +1,6 @@
+projectKey=pagina-login-react
+serverUrl=http://localhost:9000
+serverVersion=26.9.0.129388
+dashboardUrl=http://localhost:9000/dashboard?id=pagina-login-react
+ceTaskId=4ca43aa0-0333-4c41-af63-bb13b2de5aee
+ceTaskUrl=http://localhost:9000/api/ce/task?id=4ca43aa0-0333-4c41-af63-bb13b2de5aee
