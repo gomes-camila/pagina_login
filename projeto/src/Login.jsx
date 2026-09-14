@@ -8,18 +8,18 @@ function Login() {
 
   function validarLogin() {
     if (
-        email === "camila.gomes" && 
+        email === "camila.gomes@gmail.com" && 
         senha === "123456789"
     ) {
         setMensagem("Acessado com sucesso!");
     } else {
-        setMensagem("“Usuário ou senha incorretos!");
+        setMensagem("Usuário ou senha incorretos!");
         }    
     }   
     
     return (
         <div>
-        <h1>Login</h1>
+        <h2>Login</h2>
         <input
             type="email"
             value={email}
