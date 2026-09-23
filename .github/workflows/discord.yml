@@ -1,4 +1,4 @@
-  name: Notificação no Discord
+name: Notificação no Discord
 
 on:
   push:
@@ -10,6 +10,9 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
       - name: Enviar alerta no Discord
         uses: Ilshat/discord-webhook-action@v2
         with:
