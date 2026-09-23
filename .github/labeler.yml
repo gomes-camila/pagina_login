@@ -1,16 +1,5 @@
-frontend:
+# .github/labeler.yml
+changed:
   - changed-files:
       - any-glob-to-any-file:
-          - "**/*.html"
-          - "**/*.css"
-          - "**/*.js"
-
-documentation:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "**/*.md"
-
-github-actions:
-  - changed-files:
-      - any-glob-to-any-file:
-          - ".github/workflows/**"
+          - "**"
