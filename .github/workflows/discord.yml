@@ -19,9 +19,11 @@ jobs:
           node-version: '18'
 
       - name: Instalar Dependências
+        working-directory: ./projeto
         run: npm install
 
       - name: Executar Testes Unitários
+        working-directory: ./projeto
         run: npm test
 
       - name: Enviar alerta no Discord via Webhook
