@@ -10,4 +10,8 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/labeler@v6
+      - name: Apply pull request labels
+        uses: actions/labeler@v6
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml
