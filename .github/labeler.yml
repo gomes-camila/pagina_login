@@ -1,7 +1,5 @@
-documentation:
+# .github/labeler.yml
+changed:
   - changed-files:
-      - any-glob-to-any-file: '.github/workflows/*'
-
-enhancement:
-  - changed-files:
-      - any-glob-to-any-file: 'projeto/**/*'
+      - any-glob-to-any-file:
+          - "**"
