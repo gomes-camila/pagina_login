@@ -13,14 +13,22 @@ jobs:
       - name: Baixar o código do repositório
         uses: actions/checkout@v4
 
-      - name: Enviar alerta no Discord
-        uses: Ilshat/discord-webhook-action@v2
-        with:
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "🚀 Novo Push / PR no Repositório"
-          description: |
-            **Evento:** `${{ github.event_name }}`
-            **Branch:** `${{ github.ref_name }}`
-            **Autor:** `${{ github.actor }}`
-            **Commit:** `${{ github.event.head_commit.message }}`
-          color: "0x00FF00"
+      - name: Enviar alerta no Discord via Webhook
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{
+                     "embeds": [{
+                       "title": "🚀 Novo evento no Repositório!",
+                       "color": 65280,
+                       "fields": [
+                         {"name": "Evento", "value": "'"${{ github.event_name }}"'", "inline": true},
+                         {"name": "Branch", "value": "'"${{ github.ref_name }}"'", "inline": true},
+                         {"name": "Autor", "value": "'"${{ github.actor }}"'", "inline": true},
+                         {"name": "Commit", "value": "'"${{ github.event.head_commit.message }}"'"}
+                       ]
+                     }]
+                   }' \
+               $DISCORD_WEBHOOK
