@@ -13,7 +13,19 @@ jobs:
       - name: Baixar o código do repositório
         uses: actions/checkout@v4
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Executar Testes Unitários
+        run: npm test
+
       - name: Enviar alerta no Discord via Webhook
+        if: always()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
