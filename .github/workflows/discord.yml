@@ -1,0 +1,23 @@
+  name: Notificação no Discord
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar alerta no Discord
+        uses: Ilshat/discord-webhook-action@v2
+        with:
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "🚀 Novo Push / PR no Repositório"
+          description: |
+            **Evento:** `${{ github.event_name }}`
+            **Branch:** `${{ github.ref_name }}`
+            **Autor:** `${{ github.actor }}`
+            **Commit:** `${{ github.event.head_commit.message }}`
+          color: "0x00FF00"
